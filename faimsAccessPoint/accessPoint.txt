@@ -1,0 +1,28 @@
+# Install AP and Management Software
+
+sudo apt install hostapd
+
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
+
+sudo apt install dnsmasq
+
+sudo DEBIAN_FRONTEND=noninteractive apt install -y netfilter-persistent iptables-persistent
+
+# Define the Wireless Interface IP Configuration
+# using a pre made conf file
+sudo cp ./dhcpcd.conf /etc
+
+# Configure the DHCP and DNS services for the wireless network
+# using a pre made conf file
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+sudo cp ./dnsmasq.conf /etc
+
+# Ensure Wireless Operation
+sudo rfkill unblock wlan
+
+# Configure the AP Software
+sudo cp ./hostapd.conf /etc/hostapd
+
+# Running the new Wireless AP
+sudo systemctl reboot
