@@ -88,6 +88,7 @@ echo "enable conductor to start on startup"
 cd /home/faims/Documents/FAIMS-Thesis
 chmod +x ./StartConductorOnStartup.sh
 sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service
+sudo systemctl enable StartConductor.service
 
 
 echo 
