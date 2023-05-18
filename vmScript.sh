@@ -100,6 +100,12 @@ sudo systemctl enable StartConductor.service
 
 echo 
 echo "#########################################################"
+echo "Adjust package.json to include env-cmd before start"
+cp ./package.json /home/faims/Documents/FAIMS3-conductor/package.json
+
+
+echo 
+echo "#########################################################"
 echo "Configuration of Access Point"
 
 cd /home/faims/Documents/FAIMS-Thesis/faimsAccessPoint
