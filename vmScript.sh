@@ -25,7 +25,7 @@ echo "Download FAIMS conductor"
 cd /home/faims/Documents/
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
-mv FAIMS-Thesis/faims.env FAIMS3-conductor/.env
+cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env
 
 cd FAIMS3-conductor/
 
@@ -44,6 +44,11 @@ echo "Install FAIMS conductor dependancies"
 
 npm install
 
+
+echo 
+echo "#########################################################"
+echo "CouchDB install, configure and setup"
+
 apt update && apt install -y curl apt-transport-https gnupg
 curl https://couchdb.apache.org/repo/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/couchdb-archive-keyring.gpg >/dev/null 2>&1
 source /etc/os-release
@@ -53,11 +58,6 @@ echo "deb [signed-by=/usr/share/keyrings/couchdb-archive-keyring.gpg] https://ap
 apt update -y && apt upgrade -y
 
 source /home/faims/Documents/FAIMS3-conductor/.env
-
-
-echo 
-echo "#########################################################"
-echo "CouchDB configure and setup"
 
 COUCHDB_PASSWORD=$COUCHDB_PASSWORD
 FAIMS_COOKIE=$FAIMS_COOKIE_SECRET
@@ -73,21 +73,28 @@ couchdb couchdb/adminpass_again password ${COUCHDB_PASSWORD}
 couchdb couchdb/adminpass_again seen true" | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive apt-get install -y couchdb
 
-#dpkg --configure -a
 
 echo 
 echo "#########################################################"
 echo "Copying local.ini"
-#cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/local.d/10-admins.ini
+
 cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/
 
-
-#-i -u couchdb /opt/couchdb/bin/couchdb
 
 echo 
 echo "#########################################################"
 echo "restart couchdb"
+
 service couchdb restart
+
+
+echo 
+echo "#########################################################"
+echo "enable conductor to start on startup"
+
+cd /home/faims/Documents/FAIMS-Thesis
+chmod +x ./StartConductorOnStartup.sh
+sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service
 
 
 echo 
