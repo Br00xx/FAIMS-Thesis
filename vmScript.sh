@@ -90,3 +90,14 @@ echo "restart couchdb"
 service couchdb restart
 
 
+echo 
+echo "#########################################################"
+echo "Configuration of Access Point"
+
+cd /home/faims/Documents/
+git clone https://github.com/Br00xx/FAIMS-Thesis
+
+cd /home/faims/Documents/FAIMS-Thesis/faimsAccessPoint
+
+chmod +x accessPoint.txt
+./accessPoint.txt
