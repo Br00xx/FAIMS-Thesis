@@ -66,16 +66,13 @@ couchdb couchdb/adminpass_again password ${COUCHDB_PASSWORD}
 couchdb couchdb/adminpass_again seen true" | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive apt-get install -y couchdb
 
-#dpkg --configure -a
 
 echo 
 echo "#########################################################"
 echo "Copying local.ini"
-#cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/local.d/10-admins.ini
+
 cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/
 
-
-#-i -u couchdb /opt/couchdb/bin/couchdb
 
 echo 
 echo "#########################################################"
@@ -83,13 +80,17 @@ echo "restart couchdb"
 service couchdb restart
 
 
-
 echo 
 echo "#########################################################"
 echo "Configuration of Access Point"
 
 cd /home/faims/Documents/
-git clone 
+git clone https://github.com/Br00xx/FAIMS-Thesis
+
+cd /home/faims/Documents/FAIMS-Thesis/faimsAccessPoint
+
+chmod +x accessPoint.txt
+./accessPoint.txt
 
 
 
