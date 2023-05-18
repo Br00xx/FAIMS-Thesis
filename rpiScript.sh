@@ -18,7 +18,7 @@ echo "Download FAIMS conductor"
 cd /home/faims/Documents/
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
-mv .env FAIMS3-conductor/
+mv FAIMS-Thesis/faims.env FAIMS3-conductor/.env
 
 cd FAIMS3-conductor/
 
