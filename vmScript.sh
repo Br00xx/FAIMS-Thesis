@@ -22,7 +22,7 @@ echo
 echo "#########################################################"
 echo "Download FAIMS conductor"
 
-cd /home/faims/Documents/
+cd /home/faims/Documents
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
 cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env
