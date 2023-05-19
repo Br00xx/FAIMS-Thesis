@@ -1,4 +1,4 @@
-apt update -y && sudo apt upgrade -y
+apt update && sudo apt upgrade -y
 
 
 echo 
@@ -6,7 +6,7 @@ echo "#########################################################"
 echo "Install node.js version 16"
 
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-apt install -y nodejs
+apt-get install -y nodejs
 
 hash -r
 
@@ -15,7 +15,7 @@ echo
 echo "#########################################################"
 echo "Download FAIMS conductor"
 
-cd /home/faims/Documents/
+cd /home/faims/Documents
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
 cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env
