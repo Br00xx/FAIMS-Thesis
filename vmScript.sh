@@ -1,4 +1,5 @@
-apt update && sudo apt upgrade -y
+apt update
+apt upgrade -y
 
 
 echo 
@@ -55,7 +56,8 @@ source /etc/os-release
 echo "deb [signed-by=/usr/share/keyrings/couchdb-archive-keyring.gpg] https://apache.jfrog.io/artifactory/couchdb-deb/ ${VERSION_CODENAME} main" \
     | sudo tee /etc/apt/sources.list.d/couchdb.list >/dev/null
 
-apt update -y && apt upgrade -y
+apt update
+apt upgrade -y
 
 source /home/faims/Documents/FAIMS3-conductor/.env
 
