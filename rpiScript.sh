@@ -1,4 +1,5 @@
-apt update && sudo apt upgrade -y
+apt update 
+apt upgrade -y
 
 
 echo 
