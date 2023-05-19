@@ -6,8 +6,7 @@ echo
 echo "#########################################################"
 echo "Install node.js version 16"
 
-curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - &&\ sudo apt-get install -y nodejs
 
 hash -r
 
