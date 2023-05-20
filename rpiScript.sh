@@ -18,7 +18,7 @@ echo "Download FAIMS conductor"
 cd /home/faims/Documents
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
-cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env
+cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env 
 
 cd FAIMS3-conductor/
 
@@ -71,7 +71,7 @@ echo
 echo "#########################################################"
 echo "Copying local.ini"
 
-cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/
+cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/ 
 
 
 echo 
@@ -87,14 +87,14 @@ echo "enable conductor to start on startup"
 
 cd /home/faims/Documents/FAIMS-Thesis
 chmod +x ./StartConductorOnStartup.sh
-sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service
+sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service 
 sudo systemctl enable StartConductor.service
 
 
 echo 
 echo "#########################################################"
 echo "Adjust package.json to include env-cmd before start"
-cp ./package.json /home/faims/Documents/FAIMS3-conductor/package.json
+cp ./package.json /home/faims/Documents/FAIMS3-conductor/package.json 
 
 
 echo 
