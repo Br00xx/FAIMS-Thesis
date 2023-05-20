@@ -6,7 +6,8 @@ echo
 echo "#########################################################"
 echo "Install node.js version 16"
 
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - &&\ sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
+apt-get install -y nodejs 
 
 hash -r
 
@@ -15,7 +16,7 @@ echo
 echo "#########################################################"
 echo "Download FAIMS conductor"
 
-cd /home/faims/Documents
+cd /home/faims/Documents 
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
 cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env 
@@ -85,7 +86,7 @@ echo
 echo "#########################################################"
 echo "enable conductor to start on startup"
 
-cd /home/faims/Documents/FAIMS-Thesis
+cd /home/faims/Documents/FAIMS-Thesis 
 chmod +x ./StartConductorOnStartup.sh
 sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service 
 sudo systemctl enable StartConductor.service
@@ -101,7 +102,7 @@ echo
 echo "#########################################################"
 echo "Configuration of Access Point"
 
-cd /home/faims/Documents/FAIMS-Thesis/faimsAccessPoint
+cd /home/faims/Documents/FAIMS-Thesis/faimsAccessPoint 
 
 chmod +x accessPoint.txt
 ./accessPoint.txt
