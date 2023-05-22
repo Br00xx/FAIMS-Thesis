@@ -1,5 +1,9 @@
 # FAIMS-Thesis
+https://github.com/FAIMS 
 This repository is here to contain a deployment script for FAIMS and any other file that are necessary for installation
+
+The script can be used to install FAIMS conductor onto a raspberry pi or within a virtual machine.
+The only difference between them is the install of nodejs. Versions >12 are not available for x86 architectures while running debian.
 
 Instructions
 1. sudo git clone https://github.com/Br00xx/FAIMS-Thesis
@@ -9,3 +13,10 @@ Instructions
 6. ./vmScript.sh or ./rpiScript.sh
 
 Machine will restart and start conductor on start-up
+The following part will only need to be completed the first time it's launched
+
+ 7. cd /opt/FAIMS-conductor
+ 8. sudo npm run initdb
+ 9. systemctl stop StartConductor.service
+ 10. sudo npm run load-notebooks
+ 11. systemctl start StartConductor.service
