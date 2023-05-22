@@ -1,2 +1,3 @@
+#!/bin/bash
 cd /opt/FAIMS3-conductor
-npm start
+sudo npm start
