@@ -1,2 +1,2 @@
-cd /home/faims/Documents/FAIMS3-conductor
+cd /opt/FAIMS3-conductor
 npm start
