@@ -1,6 +1,7 @@
 apt update
 apt upgrade -y
 
+chmod +x /opt/FAIMS-Thesis/Uninstall.sh
 
 echo 
 echo "#########################################################"
@@ -94,10 +95,11 @@ echo "#########################################################"
 echo "enable conductor to start on startup"
 
 cd /opt/FAIMS-Thesis
-chmod +x ./StartConductorOnStartup.sh
 sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service
 sudo systemctl enable StartConductor.service
 
+chmod +x ./StartConductorOnStartup.sh
+chmod +x /etc/systemd/system/StartConductor.service
 
 echo 
 echo "#########################################################"
