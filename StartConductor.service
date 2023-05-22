@@ -2,6 +2,6 @@
 Description=StartFAIMSConductor
 After=default.target
 [Service]
-ExecStart=/home/faims/Documents/FAIMS-Thesis/StartConductorOnStartup.sh
+ExecStart=/opt/FAIMS-Thesis/StartConductorOnStartup.sh
 [Install]
 WantedBy=default.target
