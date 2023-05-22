@@ -2,9 +2,9 @@
 This repository is here to contain a deployment script for FAIMS and any other file that are necessary for installation
 
 Instructions
-1. git clone https://github.com/Br00xx/FAIMS-Thesis
-2. cd FAIMS-Thesis
-3. chmod +x vmScript.sh while running in virtual machine or chmod +x rpiScript.sh for raspberry pi
+1. sudo git clone https://github.com/Br00xx/FAIMS-Thesis
+3. cd FAIMS-Thesis
+4. sudo chmod +x vmScript.sh while running in virtual machine or chmod +x rpiScript.sh for raspberry pi
 5. sudo su
 6. ./vmScript.sh or ./rpiScript.sh
 
