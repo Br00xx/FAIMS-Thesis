@@ -3,5 +3,7 @@ Description=StartFAIMSConductor
 After=default.target
 [Service]
 ExecStart=/opt/FAIMS-Thesis/StartConductorOnStartup.sh
+StandardOutput=journal
+StandardError=journal
 [Install]
 WantedBy=default.target
