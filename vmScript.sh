@@ -23,12 +23,12 @@ echo
 echo "#########################################################"
 echo "Download FAIMS conductor"
 
-cd /home/faims/Documents
+cd /opt 
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
 cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env
 
-cd FAIMS3-conductor/
+cd /opt/FAIMS3-conductor
 
 
 echo 
@@ -58,7 +58,7 @@ echo "deb [signed-by=/usr/share/keyrings/couchdb-archive-keyring.gpg] https://ap
 apt update
 apt upgrade -y
 
-source /home/faims/Documents/FAIMS3-conductor/.env
+source /opt/FAIMS3-conductor/.env
 
 COUCHDB_PASSWORD=$COUCHDB_PASSWORD
 FAIMS_COOKIE=$FAIMS_COOKIE_SECRET
@@ -79,7 +79,7 @@ echo
 echo "#########################################################"
 echo "Copying local.ini"
 
-cp /home/faims/Documents/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/
+cp /opt/FAIMS3-conductor/couchdb/local.ini /opt/couchdb/etc/
 
 
 echo 
@@ -93,7 +93,7 @@ echo
 echo "#########################################################"
 echo "enable conductor to start on startup"
 
-cd /home/faims/Documents/FAIMS-Thesis
+cd /opt/FAIMS-Thesis
 chmod +x ./StartConductorOnStartup.sh
 sudo cp ./StartConductor.service /etc/systemd/system/StartConductor.service
 sudo systemctl enable StartConductor.service
@@ -102,14 +102,14 @@ sudo systemctl enable StartConductor.service
 echo 
 echo "#########################################################"
 echo "Adjust package.json to include env-cmd before start"
-cp ./package.json /home/faims/Documents/FAIMS3-conductor/package.json
+cp ./package.json /opt/FAIMS3-conductor/package.json
 
 
 echo 
 echo "#########################################################"
 echo "Configuration of Access Point"
 
-cd /home/faims/Documents/FAIMS-Thesis/faimsAccessPoint
+cd /opt/FAIMS-Thesis/faimsAccessPoint
 
 chmod +x accessPoint.txt
 ./accessPoint.txt
