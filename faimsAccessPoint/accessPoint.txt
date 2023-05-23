@@ -25,4 +25,5 @@ sudo rfkill unblock wlan
 sudo cp ./hostapd.conf /etc/hostapd
 
 # Running the new Wireless AP
+read -p "Press Enter to reboot"
 sudo systemctl reboot
