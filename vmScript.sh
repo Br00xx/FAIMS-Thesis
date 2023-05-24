@@ -27,7 +27,9 @@ echo "Download FAIMS conductor"
 cd /opt 
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
-cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env
+cp FAIMS3-conductor/.env.dist FAIMS3-conductor/.env 
+echo "#########################################################"
+read -p ".env has been created. Please add your google client id and secret then press any key to continue..."
 
 cd /opt/FAIMS3-conductor
 
