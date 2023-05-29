@@ -27,7 +27,7 @@ echo "Download FAIMS conductor"
 cd /opt 
 git clone https://github.com/FAIMS/FAIMS3-conductor.git
 
-cp FAIMS-Thesis/faims.env FAIMS3-conductor/.env 
+cp FAIMS-Thesis/conductor.env FAIMS3-conductor/.env 
 echo "#########################################################"
 echo ".env has been created. Please add your google client id and secret, and setup your couchdb username and password."
 read -p "Press any key to continue..."
