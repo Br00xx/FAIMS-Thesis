@@ -17,6 +17,5 @@ The following part will only need to be completed the first time it's launched
 
  7. cd /opt/FAIMS-conductor
  8. sudo npm run initdb
- 9. systemctl stop StartConductor.service
+ 9. systemctl restart StartConductor.service
  10. sudo npm run load-notebooks
- 11. systemctl start StartConductor.service
