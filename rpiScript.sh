@@ -106,6 +106,15 @@ cp ./package.json /opt/FAIMS3-conductor/package.json
 
 echo 
 echo "#########################################################"
+echo "Install FAIMS3"
+
+cd /opt/FAIMS-Thesis
+chmod +x install-FAIMS3.sh
+./install-FAIMS3.sh
+
+
+echo 
+echo "#########################################################"
 echo "Configuration of Access Point"
 
 cd /opt/FAIMS-Thesis/faimsAccessPoint 
