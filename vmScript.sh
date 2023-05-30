@@ -70,7 +70,7 @@ echo "couchdb couchdb/mode select standalone
 couchdb couchdb/mode seen true
 couchdb couchdb/cookie string ${FAIMS_COOKIE}
 couchdb couchdb/cookie seen true
-couchdb couchdb/bindaddress string 127.0.0.1
+couchdb couchdb/bindaddress string 0.0.0.0
 couchdb couchdb/bindaddress seen true
 couchdb couchdb/adminpass password ${COUCHDB_PASSWORD}
 couchdb couchdb/adminpass seen true
