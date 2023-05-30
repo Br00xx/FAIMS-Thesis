@@ -8,15 +8,10 @@ echo "#########################################################"
 echo "Install node.js version 16"
 
 apt install npm -y
-
 npm cache clean -f
-
 npm install -g n
-
 apt install g++-multilib -y
-
 n 16
-
 hash -r
 
 
@@ -108,6 +103,15 @@ echo
 echo "#########################################################"
 echo "Adjust package.json to include env-cmd before start"
 cp ./package.json /opt/FAIMS3-conductor/package.json
+
+
+echo 
+echo "#########################################################"
+echo "Install FAIMS3"
+
+cd /opt/FAIMS-Thesis
+chmod +x install-FAIMS3.sh
+./install-FAIMS3.sh
 
 
 echo 
