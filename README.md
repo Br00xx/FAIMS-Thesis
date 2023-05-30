@@ -18,4 +18,13 @@ The following part will only need to be completed the first time it's launched
  7. cd /opt/FAIMS-conductor
  8. sudo npm run initdb
  9. systemctl restart StartConductor.service
- 10. sudo npm run load-notebooks
+ 10. Go to Conductor URL and login
+ 11. Go to main page and get the Bearer Token
+ 12. Paste the token in .env file after USER_TOKEN=
+ 13. sudo npm run load-notebooks
+
+FAIMS3 will also be installed. To get that running
+
+  14. navigate to /opt/FAIMS3
+  15. open terminal here
+  16. sudo npm start
